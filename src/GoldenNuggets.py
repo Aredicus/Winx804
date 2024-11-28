@@ -8,7 +8,7 @@ def load_data(file_path):
     df = pd.read_csv(file_path, low_memory=False)
 
     # Обработка дат
-    for col in ['create_date', 'update_date']:
+    for col in ['create_date', 'update_date', 'client_bday']:
         df[col] = pd.to_datetime(df[col], errors='coerce')
         df[col] = df[col].apply(lambda x: None if pd.notna(x) and (x.year < 1924 or x.year > 2024) else x)
 
