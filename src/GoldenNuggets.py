@@ -19,7 +19,7 @@ def load_data(file_path):
     return df
 
 
-def find_important_columns(df, threshold=25):
+def find_important_columns(df, threshold=20):
     """Находит важные колонки на основе комбинированного показателя."""
     important_columns = []
     for column in df.columns:
@@ -102,7 +102,7 @@ def main():
     data = load_data(input_file_path)
 
     # Находим важные колонки
-    key_columns = find_important_columns(data, threshold=25)
+    key_columns = find_important_columns(data, threshold=20)
 
     # Проверяем наличие ключевых колонок
     if not key_columns:
